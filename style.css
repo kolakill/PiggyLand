@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Отключение полос прокрутки */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121317; /* Устанавливаем основной цвет фона */
+}
+
+.map-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://cdn.discordapp.com/attachments/1234516974353125408/1278717500909162538/5055.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotspot {
+    position: absolute;
+    width: 30px; /* Фиксированный размер */
+    height: 30px; /* Фиксированный размер */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.yellow {
+    background-color: rgba(255, 255, 0, 0.1);
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.green {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.white {
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0.1; /* Прозрачность точки */
+}
+
+.blue {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+/* Позиционирование горячих точек по центру карты */
+#spot1 {
+    top: 23%;
+    left: 45.5%;
+    transform: translate(-50%, -50%);
+}
+
+#spot2 {
+    top: 33.5%;
+    left: 45.5%;
+    transform: translate(-50%, -50%);
+}
+
+#spot3 {
+    top: 44%;
+    left: 41.6%;
+    transform: translate(-50%, -50%);
+}
+
+#spot4 {
+    top: 88.4%;
+    left: 45.6%;
+    transform: translate(-50%, -50%);
+}
+
+#spot5 {
+    top: 50%;
+    left: 50.25%;
+    transform: translate(-50%, -50%);
+}
+
+
+#info-popup {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 10;
+    width: 250px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white; /* Белый цвет текста */
+}
+
+/* Flexbox для выравнивания элементов в строку */
+#info-popup .info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#info-popup img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#info-popup p {
+    margin: 0;
+    color: white; /* Белый цвет текста для всех параграфов */
+}
+
+#info-popup.show {
+    opacity: 1;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    #info-popup {
+        width: 200px;
+    }
+}
+
+/* Стили для активного состояния горячих точек */
+.hotspot:hover {
+    opacity: 0.6;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}

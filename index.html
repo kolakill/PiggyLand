@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Интерактивная карта</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили для аватарок */
+        #info-popup img {
+            width: 60px;  /* Увеличенный размер для квадратного вида */
+            height: 60px; /* Увеличенный размер для квадратного вида */
+            border-radius: 10px; /* Слегка закругленные углы */
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <img src="https://cdn.discordapp.com/attachments/1234516974353125408/1278717500909162538/5055.jpg?ex=66d3cc39&is=66d27ab9&hm=3fd2d37de12202314593a56d5ad48b9a1b6dbbfee67eddb8dfd51329ed8fb4fd&" alt="Карта метро" id="map">
+        <!-- Горячие точки -->
+        <div class="hotspot yellow" id="spot1" data-owner="MrWoooood" data-residents="MrWoooood" data-avatar="https://media.discordapp.net/attachments/1153354480541237380/1279861298145792030/image.png?ex=66d5fb38&is=66d4a9b8&hm=31ca3ff4bdaf37166ccceb9bfabc58a47c30091e48921c129eef8880c8c6a9ea&=&format=webp&quality=lossless&width=83&height=78"></div>
+        <div class="hotspot yellow" id="spot2" data-owner="fourif_" data-residents="fourif_, joplmm" data-avatar="https://media.discordapp.net/attachments/1153354480541237380/1279858913734557779/070219a1b94d2f37.png?ex=66d5f8ff&is=66d4a77f&hm=e21eeb016305e79d1ff599c7f6c3d33827a7d68c11fcb7bf2ccb38583925a853&=&format=webp&quality=lossless&width=242&height=232"></div>
+        <div class="hotspot red" id="spot3" data-owner="MrWoooood" data-residents="MrWoooood, privetiym, Fasterool" data-avatar="https://media.discordapp.net/attachments/1153354480541237380/1279861298145792030/image.png?ex=66d5fb38&is=66d4a9b8&hm=31ca3ff4bdaf37166ccceb9bfabc58a47c30091e48921c129eef8880c8c6a9ea&=&format=webp&quality=lossless&width=83&height=78"></div>
+        <div class="hotspot green" id="spot4" data-owner="kolakill" data-residents=" - " data-avatar="https://media.discordapp.net/attachments/1153354480541237380/1279861687960473641/3423.png?ex=66d5fb95&is=66d4aa15&hm=496a4e4b82062edd3202122915126ab49dc286b625ffc3fe14ede5206b3dc7ad&=&format=webp&quality=lossless&width=232&height=222"></div>
+        <div class="hotspot white" id="spot5" data-owner="kolakill" data-residents=" - " data-avatar="https://media.discordapp.net/attachments/1153354480541237380/1279861687960473641/3423.png?ex=66d5fb95&is=66d4aa15&hm=496a4e4b82062edd3202122915126ab49dc286b625ffc3fe14ede5206b3dc7ad&=&format=webp&quality=lossless&width=232&height=222"></div>
+
+        <div id="info-popup">
+            <div class="info-row">
+                <img id="owner-avatar" src="" alt="Аватар владельца">
+                <p><strong>Владелец:</strong> <span id="owner"></span></p>
+            </div>
+            <div class="info-row">
+                <p><strong>Жители:</strong> <span id="residents"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
